@@ -792,16 +792,16 @@ static void* dispatcher(void* arg)//协程调度器
 static void* mcoListen(void *arg_co)
 {
     co_enable_hook_sys();
-    int lsEpFd;
-    lsEpFd=co_epoll_create(128);
-    if(lsEpFd<0)
-    {
-        myErrorOperate("create listen_epfd err",__LINE__);
-    }
+  //  int lsEpFd;
+  //  lsEpFd=co_epoll_create(128);
+ //   if(lsEpFd<0)
+  //  {
+  //      myErrorOperate("create listen_epfd err",__LINE__);
+  //  }
     int lsSocketFd;
     if((lsSocketFd=socket(AF_INET,SOCK_STREAM,0))<0)
     {
-        close(lsEpFd);
+        close(lsSocketFd);
         myErrorOperate("create listen_socket fd err.",__LINE__);
     }
     //set socket opt
