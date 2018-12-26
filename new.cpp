@@ -801,7 +801,7 @@ static void* mcoListen(void *arg_co)
     int lsSocketFd;
     if((lsSocketFd=socket(AF_INET,SOCK_STREAM,0))<0)
     {
-        close(lsSocketFd);
+      //  close(lsEpFd);
         myErrorOperate("create listen_socket fd err.",__LINE__);
     }
     //set socket opt
